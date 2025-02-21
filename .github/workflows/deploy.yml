@@ -31,6 +31,5 @@ jobs:
           CACHIX_AUTH_TOKEN: "${{ secrets.DARKSOIL_CACHIX_AUTH_TOKEN }}"
         run: |
           cachix push $CACHE_NAME ./result
-          # --agent is needed due to a regression in Cachix 1.1, which will be fixed in Cachix 1.2
-          cachix deploy activate --agent file-storage-provider-aon ./result
+          cachix deploy activate ./result
 

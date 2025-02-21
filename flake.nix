@@ -79,7 +79,7 @@
                     wantedBy = [ "multi-user.target" ];
                     serviceConfig = {
                       ExecStart =
-                        "${aon}/bin/always-online-node --data-dir /root --local-only";
+                        "${aon}/bin/always-online-node --data-dir /root --lan-only";
                       Restart = "always";
                       RestartSec = 10;
                     };
