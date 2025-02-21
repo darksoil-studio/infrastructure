@@ -13,13 +13,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     demo-launcher.url = "github:darksoil-studio/demo-launcher";
-
   };
 
   outputs = { nixpkgs, cachix-deploy-flake, srvos, disko, demo-launcher, ... }:
     let
       # change these 
-      machineName = "file-storage-provider-aon";
+      machineName = "aon1";
       sshPubKeys = {
         guillem =
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDTE+RwRfcG3UNTOZwGmQOKd5R+9jN0adH4BIaZvmWjO guillem.cordoba@gmail.com";
@@ -35,7 +34,7 @@
           srvos.nixosModules.server
           srvos.nixosModules.mixins-systemd-boot
           disko.nixosModules.disko
-          (import ./disko-hetzner-cloud.nix { disks = [ "/dev/sda" ]; })
+          (import ./../../disko-hetzner-cloud.nix { disks = [ "/dev/sda" ]; })
           ({
             system.stateVersion = "24.11";
 
@@ -77,7 +76,6 @@
                       RestartSec = 10;
                     };
                   };
-
                 };
               };
             };
