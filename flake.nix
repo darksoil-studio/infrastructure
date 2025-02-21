@@ -48,13 +48,6 @@
           })
         ];
         bootstrapNixOS = lib.nixosSystem { inherit system modules; };
-        # bootstrapNixOS = cachix-deploy-lib.bootstrapNixOS {
-        #   system = system;
-        #   hostname = machineName;
-        #   sshPubKey = sshPubKey;
-        #   grubDevices = [ "/dev/sda" ];
-        #   diskoDevices = import ./disko-hetzner-cloud.nix { inherit lib; };
-        # };
       };
     in {
       nixosConfigurations.${machineName} =
