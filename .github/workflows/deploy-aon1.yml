@@ -23,7 +23,7 @@ jobs:
           name: "${{ env.CACHE_NAME }}"
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
       - name: Build aon1
-        run:
+        run: |
           cd servers/aon1
           nix build -L
       - name: Deploy
