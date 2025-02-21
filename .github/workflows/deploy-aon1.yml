@@ -35,4 +35,3 @@ jobs:
           cd servers/aon1
           cachix push $CACHE_NAME ./result
           cachix deploy activate ./result
-
