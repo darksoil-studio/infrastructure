@@ -71,7 +71,7 @@
                     wantedBy = [ "multi-user.target" ];
                     serviceConfig = {
                       ExecStart =
-                        "${aon}/bin/always-online-node --data-dir /root/demo-launcher/v0.0.3";
+                        "${aon}/bin/always-online-node --data-dir /root/demo-launcher/v0.1";
                       Restart = "always";
                       RestartSec = 10;
                     };
