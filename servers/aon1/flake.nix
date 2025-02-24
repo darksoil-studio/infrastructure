@@ -12,7 +12,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    demo-launcher.url = "github:darksoil-studio/demo-launcher";
+    demo-launcher.url = "github:darksoil-studio/demo-launcher/v0.0.3";
   };
 
   outputs = { nixpkgs, cachix-deploy-flake, srvos, disko, demo-launcher, ... }:
@@ -71,7 +71,7 @@
                     wantedBy = [ "multi-user.target" ];
                     serviceConfig = {
                       ExecStart =
-                        "${aon}/bin/always-online-node --data-dir /root --lan-only";
+                        "${aon}/bin/always-online-node --data-dir /root/demo-launcher/v0.0.3";
                       Restart = "always";
                       RestartSec = 10;
                     };
