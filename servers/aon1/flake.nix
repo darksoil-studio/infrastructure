@@ -12,7 +12,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    demo-launcher.url = "github:darksoil-studio/demo-launcher/v0.0.3";
+    demo-launcher.url = "github:darksoil-studio/demo-launcher/v0.1.0";
   };
 
   outputs = { nixpkgs, cachix-deploy-flake, srvos, disko, demo-launcher, ... }:
