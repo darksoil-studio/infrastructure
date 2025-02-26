@@ -12,10 +12,12 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    demo-launcher.url = "github:darksoil-studio/demo-launcher/v0.1.2";
+    aon.url = "github:darksoil-studio/always-online-nodes";
+    demo-launcher.url = "github:darksoil-studio/demo-launcher/?ref=release/0.1";
+    messenger-demo.url = "github:darksoil-studio/messenger-demo/v0.1.0";
   };
 
-  outputs = { nixpkgs, cachix-deploy-flake, srvos, disko, demo-launcher, ... }:
+  outputs = inputs@{ nixpkgs, cachix-deploy-flake, srvos, disko, ... }:
     let
       # change these 
       machineName = "aon1";
@@ -63,8 +65,13 @@
                 config = {
                   # here comes all your NixOS configuration
                   systemd.services.aon = let
-                    aon =
-                      demo-launcher.outputs.packages."x86_64-linux".file-storage-provider;
+                    aon = inputs.aon.outputs.builders.${system}.aon-for-happs {
+                      happs = [
+                        inputs.demo-launcher.outputs.packages."x86_64-linux".file-storage-provider_happ
+                        inputs.messenger-demo.outputs.packages."x86_64-linux".messenger_demo_happ
+                      ];
+                    };
+
                   in {
                     enable = true;
                     path = [ aon ];
