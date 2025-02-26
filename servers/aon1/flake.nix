@@ -57,6 +57,7 @@
       packages = forAllSystems (system:
         let inherit (common system) cachix-deploy-lib modules;
         in {
+
           default = cachix-deploy-lib.spec {
             agents = {
               "${machineName}" = cachix-deploy-lib.nixos {

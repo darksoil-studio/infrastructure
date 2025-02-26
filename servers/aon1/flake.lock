@@ -2252,11 +2252,11 @@
         "playground": "playground_3"
       },
       "locked": {
-        "lastModified": 1740560571,
-        "narHash": "sha256-et8Zouw5E+w8ug9ptMtK7aR/WllaHygh5/D0s6bjA2E=",
+        "lastModified": 1740561651,
+        "narHash": "sha256-kBy1dz+EWjw20pixRCO5Zb5HK96IhNg6VoeiiZuSq8c=",
         "owner": "darksoil-studio",
         "repo": "demo-launcher",
-        "rev": "3d5f9a62036d5618b38631378acbea9dd1e2bc61",
+        "rev": "bfae3f0c37cddf13b1e10eeeddb9dda06fb5ccdb",
         "type": "github"
       },
       "original": {
