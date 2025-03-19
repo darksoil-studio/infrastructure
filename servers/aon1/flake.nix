@@ -14,7 +14,7 @@
     };
     aon.url = "github:darksoil-studio/always-online-nodes";
     demo-launcher.url = "github:darksoil-studio/demo-launcher/?ref=release/0.1";
-    messenger-demo.url = "github:darksoil-studio/messenger-demo/v0.1.0";
+    dash-chat.url = "github:darksoil-studio/dash-chat/v0.1.0";
   };
 
   outputs = inputs@{ nixpkgs, cachix-deploy-flake, srvos, disko, ... }:
@@ -69,7 +69,7 @@
                     aon = inputs.aon.outputs.builders.${system}.aon-for-happs {
                       happs = [
                         inputs.demo-launcher.outputs.packages."x86_64-linux".file-storage-provider_happ
-                        inputs.messenger-demo.outputs.packages."x86_64-linux".messenger_demo_happ
+                        inputs.dash-chat.outputs.packages."x86_64-linux".dash_chat_happ
                       ];
                     };
 
