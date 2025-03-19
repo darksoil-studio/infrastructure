@@ -14,7 +14,7 @@
     };
     aon.url = "github:darksoil-studio/always-online-nodes";
     demo-launcher.url = "github:darksoil-studio/demo-launcher/?ref=release/0.1";
-    dash-chat.url = "github:darksoil-studio/dash-chat/v0.1.0";
+    dash-chat.url = "github:darksoil-studio/dash-chat/v0.1.2";
   };
 
   outputs = inputs@{ nixpkgs, cachix-deploy-flake, srvos, disko, ... }:
