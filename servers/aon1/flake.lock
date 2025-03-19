@@ -4610,11 +4610,11 @@
         "tnesh-stack": "tnesh-stack_96"
       },
       "locked": {
-        "lastModified": 1742391568,
-        "narHash": "sha256-UDsKasseixaZDjYu3k2JVZjr6S/Ed915jTllTYDF/qY=",
+        "lastModified": 1742392021,
+        "narHash": "sha256-yTMQHg/AwDhKHfz2EpoDIYLbY6f/GZyA700/I4mhsOM=",
         "owner": "darksoil-studio",
         "repo": "dash-chat",
-        "rev": "16b9857f622925bd8f753c9558fc17a5b761f941",
+        "rev": "c5b89edfb4524973d8b0969675c8e57b0ced8715",
         "type": "github"
       },
       "original": {
