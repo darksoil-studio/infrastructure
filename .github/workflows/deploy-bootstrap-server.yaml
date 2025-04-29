@@ -1,0 +1,37 @@
+name: Build & Deploy bootstrap-server
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+env:
+  CACHE_NAME: darksoil-studio
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo rm -rf /opt&
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v27
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          nix_path: nixpkgs=channel:nixos-24.11
+      - uses: cachix/cachix-action@v14
+        with:
+          name: "${{ env.CACHE_NAME }}"
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+      - name: Build bootstrap-server
+        run: |
+          cd servers/bootstrap-server
+          nix build -L
+      - name: Deploy
+        if: github.ref == 'refs/heads/main'
+        env:
+          CACHIX_ACTIVATE_TOKEN: "${{ secrets.CACHIX_ACTIVATE_TOKEN }}"
+          CACHIX_AUTH_TOKEN: "${{ secrets.DARKSOIL_CACHIX_AUTH_TOKEN }}"
+        run: |
+          cd servers/aon1
+          cachix push $CACHE_NAME ./result
+          cachix deploy activate ./result
