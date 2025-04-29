@@ -13,8 +13,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     aon.url = "github:darksoil-studio/always-online-nodes";
-    demo-launcher.url = "github:darksoil-studio/demo-launcher/?ref=release/0.1";
-    dash-chat.url = "github:darksoil-studio/dash-chat/v0.1.2";
+    demo-launcher.url = "github:darksoil-studio/demo-launcher/v0.2.0";
+    dash-chat.url = "github:darksoil-studio/dash-chat/v0.2.2";
   };
 
   outputs = inputs@{ nixpkgs, cachix-deploy-flake, srvos, disko, ... }:
@@ -25,6 +25,8 @@
         guillem =
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDTE+RwRfcG3UNTOZwGmQOKd5R+9jN0adH4BIaZvmWjO guillem.cordoba@gmail.com";
       };
+      bootstrapServerUrl = "http://157.180.93.55:8888";
+      signalServerUrl = "ws://157.180.93.55:8888";
 
       lib = nixpkgs.lib;
       forAllSystems = lib.genAttrs lib.systems.flakeExposed;
@@ -61,25 +63,37 @@
           default = cachix-deploy-lib.spec {
             agents = {
               "${machineName}" = cachix-deploy-lib.nixos {
+                # here comes all your NixOS configuration
                 imports = modules;
 
-                config = {
-                  # here comes all your NixOS configuration
-                  systemd.services.aon = let
-                    aon = inputs.aon.outputs.builders.${system}.aon-for-happs {
-                      happs = [
-                        inputs.demo-launcher.outputs.packages."x86_64-linux".file-storage-provider_happ
-                        inputs.dash-chat.outputs.packages."x86_64-linux".dash_chat_happ
-                      ];
-                    };
-
-                  in {
+                config = let
+                  aon = inputs.aon.outputs.builders.${system}.aon-for-happs {
+                    happs = [
+                      inputs.demo-launcher.outputs.packages."x86_64-linux".file-storage-provider_happ
+                      inputs.dash-chat.outputs.packages."x86_64-linux".dash_chat_happ
+                    ];
+                  };
+                in {
+                  systemd.services.aon1 = {
                     enable = true;
                     path = [ aon ];
                     wantedBy = [ "multi-user.target" ];
                     serviceConfig = {
                       ExecStart =
-                        "${aon}/bin/always-online-node --data-dir /root/demo-launcher/v0.1.2";
+                        "${aon}/bin/always-online-node --data-dir /root/aon1/v0.2 --bootstrap-url ${bootstrapServerUrl} --signal-url ${signalServerUrl}";
+                      RuntimeMaxSec = "3600"; # Restart every hour
+
+                      Restart = "always";
+                      RestartSec = 10;
+                    };
+                  };
+                  systemd.services.aon2 = {
+                    enable = true;
+                    path = [ aon ];
+                    wantedBy = [ "multi-user.target" ];
+                    serviceConfig = {
+                      ExecStart =
+                        "${aon}/bin/always-online-node --data-dir /root/aon2/v0.2 --bootstrap-url ${bootstrapServerUrl} --signal-url ${signalServerUrl}";
                       RuntimeMaxSec = "3600"; # Restart every hour
 
                       Restart = "always";
