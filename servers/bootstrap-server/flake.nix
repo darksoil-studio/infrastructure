@@ -63,6 +63,11 @@
                 imports = modules;
 
                 config = {
+                  networking.firewall = {
+                    enable = true;
+                    allowedTCPPorts = [ 8888 ];
+                  };
+
                   # here comes all your NixOS configuration
                   systemd.services.bootstrap-server = let
                     bootstrap-server =
