@@ -32,6 +32,6 @@ jobs:
           CACHIX_ACTIVATE_TOKEN: "${{ secrets.CACHIX_ACTIVATE_TOKEN }}"
           CACHIX_AUTH_TOKEN: "${{ secrets.DARKSOIL_CACHIX_AUTH_TOKEN }}"
         run: |
-          cd servers/aon1
+          cd servers/bootstrap-server
           cachix push $CACHE_NAME ./result
           cachix deploy activate ./result
