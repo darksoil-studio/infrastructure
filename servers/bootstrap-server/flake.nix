@@ -74,7 +74,7 @@
                     wantedBy = [ "multi-user.target" ];
                     serviceConfig = {
                       ExecStart =
-                        "${bootstrap-server}/bin/kitsune2-bootstrap-srv --production";
+                        "${bootstrap-server}/bin/kitsune2-bootstrap-srv --production --listen 0.0.0.0:8888";
                       # RuntimeMaxSec = "3600"; # Restart every hour
 
                       Restart = "always";
