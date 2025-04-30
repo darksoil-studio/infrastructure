@@ -83,7 +83,7 @@
                       RuntimeMaxSec = "600"; # Restart every 10 mins
 
                       Restart = "always";
-                      RestartSec = 5;
+                      RestartSec = 0;
                     };
                   };
                 };
