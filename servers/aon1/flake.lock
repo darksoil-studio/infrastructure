@@ -21,11 +21,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745942611,
-        "narHash": "sha256-O43CAcQIqljmTUTVDKXagFgSbrjfFGkWaMGbAVjGWuA=",
+        "lastModified": 1745998111,
+        "narHash": "sha256-7xffWtlo08CxKZXIsl6nrMWO8nm3YLDE8Hx2jllLTdw=",
         "owner": "darksoil-studio",
         "repo": "always-online-nodes",
-        "rev": "30c7f748e2ba9e928c311f3ecf16360fad0eff95",
+        "rev": "139c531f0384a4093bd138571da35e7835294a86",
         "type": "github"
       },
       "original": {
@@ -70184,11 +70184,11 @@
     },
     "nixpkgs_358": {
       "locked": {
-        "lastModified": 1745868005,
-        "narHash": "sha256-hZScOyQphT4RUmSEJX+2OxjIlGgLwSd8iW1LNtAWIOs=",
+        "lastModified": 1745921652,
+        "narHash": "sha256-hEAvEN+y/OQ7wA7+u3bFJwXSe8yoSf2QaOMH3hyTJTQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "330d0a4167924b43f31cc9406df363f71b768a02",
+        "rev": "b000159bba69b0106a42f65e52dbf27f77aca9d3",
         "type": "github"
       },
       "original": {
