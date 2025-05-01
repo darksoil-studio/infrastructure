@@ -13,7 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    kitsune2.url = "github:holochain/kitsune2/v0.1.7";
+    kitsune2.url = "github:holochain/kitsune2/v0.1.8";
   };
 
   outputs = inputs@{ nixpkgs, cachix-deploy-flake, srvos, disko, ... }:

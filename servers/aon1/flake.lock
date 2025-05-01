@@ -21,11 +21,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1746011758,
-        "narHash": "sha256-gBP+ie5DikdtNPEKMTYNtRlUtTCzEOXIQKK8tQ317qM=",
+        "lastModified": 1746127540,
+        "narHash": "sha256-GwojvJb0S37O/NDl8tEdnKAW4+lnHhBI357yWS/+QGk=",
         "owner": "darksoil-studio",
         "repo": "always-online-nodes",
-        "rev": "da7f634e5950a26507f6d556753af6dadbaaa897",
+        "rev": "3bc23a26a87349f056dce1bac305051d9dc73e33",
         "type": "github"
       },
       "original": {
@@ -5542,16 +5542,16 @@
         "playground": "playground_24"
       },
       "locked": {
-        "lastModified": 1746012620,
-        "narHash": "sha256-sxz6xYmLBmJPHmGNOuLNK2mtwMrOHwWWRiVqArn2s1M=",
+        "lastModified": 1746127451,
+        "narHash": "sha256-YCHWIG5wsHS1RT2r1i2zflpW2V++2oHMuq8IzwlFHQ4=",
         "owner": "darksoil-studio",
         "repo": "demo-launcher",
-        "rev": "c86c42a1ba81771762e88e9a81923f9a2c95b9bd",
+        "rev": "a7491974e928f396b54977b35a9128fd224dbb0d",
         "type": "github"
       },
       "original": {
         "owner": "darksoil-studio",
-        "ref": "v0.2.2",
+        "ref": "v0.2.3",
         "repo": "demo-launcher",
         "type": "github"
       }
@@ -70184,11 +70184,11 @@
     },
     "nixpkgs_358": {
       "locked": {
-        "lastModified": 1745921652,
-        "narHash": "sha256-hEAvEN+y/OQ7wA7+u3bFJwXSe8yoSf2QaOMH3hyTJTQ=",
+        "lastModified": 1746055187,
+        "narHash": "sha256-3dqArYSMP9hM7Qpy5YWhnSjiqniSaT2uc5h2Po7tmg0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b000159bba69b0106a42f65e52dbf27f77aca9d3",
+        "rev": "3e362ce63e16b9572d8c2297c04f7c19ab6725a5",
         "type": "github"
       },
       "original": {
@@ -87946,11 +87946,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745309546,
-        "narHash": "sha256-cmo852T3LxxkH4RSU6T006R3NJN5dKQaqbxQ8Zm0vAI=",
+        "lastModified": 1746105715,
+        "narHash": "sha256-CApScHWtVdJT7xOpTDfT8lqBdQpj0+mLCXNCFJY4+GI=",
         "owner": "numtide",
         "repo": "srvos",
-        "rev": "be128093568b7f0d6d9d33941564e78d19bf7c06",
+        "rev": "fca1442996e4ed49b379465f6d211a01147bfecb",
         "type": "github"
       },
       "original": {
