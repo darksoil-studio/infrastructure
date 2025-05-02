@@ -80,7 +80,7 @@
                     serviceConfig = {
                       ExecStart =
                         "${bootstrap-server}/bin/kitsune2-bootstrap-srv --production --listen 0.0.0.0:8888";
-                      RuntimeMaxSec = "600"; # Restart every 10 mins
+                      # RuntimeMaxSec = "600"; # Restart every 10 mins
 
                       Restart = "always";
                       RestartSec = 0;
