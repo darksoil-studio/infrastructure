@@ -13,8 +13,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     aon.url = "github:darksoil-studio/always-online-nodes";
-    demo-launcher.url = "github:darksoil-studio/demo-launcher/v0.2.3";
-    dash-chat.url = "github:darksoil-studio/dash-chat/v0.2.2";
+    demo-launcher.url = "github:darksoil-studio/demo-launcher/v0.2.5";
+    dash-chat.url = "github:darksoil-studio/dash-chat/v0.2.3";
   };
 
   outputs = inputs@{ nixpkgs, cachix-deploy-flake, srvos, disko, ... }:
