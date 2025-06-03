@@ -13,8 +13,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     aon.url = "github:darksoil-studio/always-online-nodes";
-    demo-launcher.url = "github:darksoil-studio/demo-launcher/v0.2.8";
-    dash-chat.url = "github:darksoil-studio/dash-chat/v0.2.6";
+    demo-launcher.url = "github:darksoil-studio/demo-launcher/v0.2.9";
+    dash-chat.url = "github:darksoil-studio/dash-chat/v0.2.7";
   };
 
   outputs = inputs@{ nixpkgs, cachix-deploy-flake, srvos, disko, ... }:
@@ -80,7 +80,7 @@
                     wantedBy = [ "multi-user.target" ];
                     serviceConfig = {
                       ExecStart =
-                        "${aon}/bin/always-online-node --data-dir /root/aon1/v0.2 --bootstrap-url ${bootstrapServerUrl} --signal-url ${signalServerUrl}";
+                        "${aon}/bin/always-online-node --data-dir /root/aon1/v0.2.0 --bootstrap-url ${bootstrapServerUrl} --signal-url ${signalServerUrl}";
                       RuntimeMaxSec = "3600"; # Restart every hour
 
                       Restart = "always";
@@ -93,7 +93,7 @@
                     wantedBy = [ "multi-user.target" ];
                     serviceConfig = {
                       ExecStart =
-                        "${aon}/bin/always-online-node --data-dir /root/aon2/v0.2 --bootstrap-url ${bootstrapServerUrl} --signal-url ${signalServerUrl}";
+                        "${aon}/bin/always-online-node --data-dir /root/aon2/v0.2.0 --bootstrap-url ${bootstrapServerUrl} --signal-url ${signalServerUrl}";
                       RuntimeMaxSec = "3600"; # Restart every hour
 
                       Restart = "always";
