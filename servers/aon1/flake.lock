@@ -11421,16 +11421,16 @@
         "tauri-plugin-holochain": "tauri-plugin-holochain_46"
       },
       "locked": {
-        "lastModified": 1749836644,
-        "narHash": "sha256-5T+BJDSvD7+6li4yVG/wMdFf/Y55Ox3nSKDmuwWxNT0=",
+        "lastModified": 1749897631,
+        "narHash": "sha256-YBOInzq+5tip+J9zcEjBDOFKjqlGTnEL2j/pj2KpUHc=",
         "owner": "darksoil-studio",
         "repo": "demo-launcher",
-        "rev": "6ee6481d8aab1819a4fafda02e1212fddb100393",
+        "rev": "4df177bd46d969080b08c41fb0f13dab3fda4fc3",
         "type": "github"
       },
       "original": {
         "owner": "darksoil-studio",
-        "ref": "v0.2.13",
+        "ref": "v0.2.14",
         "repo": "demo-launcher",
         "type": "github"
       }
